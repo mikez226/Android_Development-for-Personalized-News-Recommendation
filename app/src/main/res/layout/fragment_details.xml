@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--    the content might be too long to fit into one screen. -->
+<!--    So we would need a ScrollView to wrap around the LinearLayout-->
+<!--    内容可能太长，无法单页显示。需要一个ScrollView包裹LinearLayout-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.details.DetailsFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/screen_margin"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/details_title_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="Shocking news!" />
+        <!-- Notice: these "tools" only show in Design view. -->
+        <!-- We won't see them after compilation-->
+
+        <TextView
+            android:id="@+id/details_author_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_compact"
+            tools:text="@tools:sample/full_names" />
+
+        <TextView
+            android:id="@+id/details_date_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@tools:sample/date/mmddyy"/>
+
+        <TextView
+            android:id="@+id/details_description_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_compact"
+            tools:text="This is the description"/>
+
+        <ImageView
+            android:id="@+id/details_image_view"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="@dimen/margin_default"
+            android:contentDescription="@string/news_image"
+            android:scaleType="centerCrop"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/details_content_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default"
+            android:layout_marginBottom="@dimen/margin_xlarge"
+            tools:text="@tools:sample/lorem/random"/>
+    </LinearLayout>
+</ScrollView>

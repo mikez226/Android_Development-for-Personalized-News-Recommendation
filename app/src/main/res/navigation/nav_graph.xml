@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--我们选择的 recourse type体现在这个tag name-->
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_home">
+    <!-- bottom_nav_menu: the layout of three items-->
+    <!-- nav_graph: connect fragment with each item-->
+
+    <!-- id is layout, should be same to bottom_nav_menu.xml -->
+    <!-- name is Fragment Class -->
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.study.tindernews.ui.home.HomeFragment"
+        android:label= "@string/title_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/navigation_save"
+        android:name="com.study.tindernews.ui.save.SaveFragment"
+        android:label="@string/title_save"
+        tools:layout="@layout/fragment_save" >
+        <action
+            android:id="@+id/action_navigation_save_to_navigation_details"
+            app:destination="@id/navigation_details"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="com.study.tindernews.ui.search.SearchFragment"
+        android:label="@string/title_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_navigation_search_to_navigation_details"
+            app:destination="@id/navigation_details"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_details"
+        android:name="com.study.tindernews.ui.details.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" >
+        <argument
+            android:name="article"
+            app:argType="com.study.tindernews.model.Article" />
+    </fragment>
+</navigation>

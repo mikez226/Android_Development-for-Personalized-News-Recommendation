@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--we use framelayout-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<!--    put news inside a CardView to get a rounded corner and also shadows-->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="24dp"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/margin_default"
+            android:orientation="vertical">
+            <!--top title text view-->
+            <TextView
+                android:id="@+id/swipe_card_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_compact"
+                android:singleLine="true"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:text="CNN breaking news" />
+            <!--a separator line-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/purple_500" />
+            <!--description text view-->
+            <TextView
+                android:id="@+id/swipe_card_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textSize="16sp"
+                tools:text="@tools:sample/lorem/random" />
+            <!--a content image view-->
+            <ImageView
+                android:id="@+id/swipe_card_image_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:scaleType="centerCrop"
+                tools:src="@tools:sample/avatars" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</FrameLayout>
